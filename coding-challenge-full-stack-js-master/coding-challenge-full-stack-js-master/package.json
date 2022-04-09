@@ -1,0 +1,75 @@
+{
+  "name": "coding-challenge-full-stack-js",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.23",
+    "@types/node-fetch": "^2.6.1",
+    "@types/react": "^18.0.0",
+    "@types/supertest": "^2.0.12",
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2",
+    "nodemon": "2.0.7",
+    "npm-run-all": "4.1.5",
+    "nyc": "^15.1.0",
+    "supertest": "6.1.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "start": "npm-run-all -l -p start-react start-api",
+    "start-react": "react-scripts start",
+    "start-api": "nodemon api/app.ts",
+    "build": "react-scripts build",
+    "test": "npm-run-all test-app test-api",
+    "test-app": "react-scripts test --watchAll=false",
+    "test-api": "mocha -r ts-node/register api/tests/*.ts",
+    "eject": "react-scripts eject"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/*",
+      "public/*"
+    ],
+    "delay": "2000",
+    "watch": [
+      "src/*"
+    ],
+    "ext": "js,ts,json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
